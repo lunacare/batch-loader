@@ -26,7 +26,7 @@ class BatchLoader
   def batch(default_value: nil, cache: true, replace_methods: nil, key: nil, &batch_block)
     @default_value = default_value
     @cache = cache
-    @replace_methods = replace_methods.nil? ? cache : replace_methods
+    @replace_methods = replace_methods.nil? ? false : replace_methods
     @key = key
     @batch_block = batch_block
 

@@ -205,7 +205,7 @@ RSpec.describe BatchLoader do
       user = User.save(id: 1)
       post = Post.new(user_id: user.id)
 
-      batch_loader = post.user_lazy
+      batch_loader = post.user_lazy(replace_methods: true)
 
       expect(batch_loader.inspect).to match(/#<BatchLoader:0x\w+>/)
       expect(batch_loader.to_s).to match(/#<User:0x\w+>/)
