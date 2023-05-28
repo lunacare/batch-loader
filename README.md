@@ -487,7 +487,7 @@ end
 | `item`            | -                                                                    | Item which will be collected and used for batching.                                   |
 | `default_value`   | `nil`                                                                | Value returned by default after batching.                                             |
 | `cache`           | `true`                                                               | Set `false` to disable caching between the same executions.                           |
-| `replace_methods` | `true`                                                               | Set `false` to use `#method_missing` instead of replacing the methods after batching. |
+| `replace_methods` | `false`                                                              | Set `false` to use `#method_missing` instead of replacing the methods after batching. |
 | `key`             | `nil`                                                                | Pass custom key to uniquely identify the batch block.                                 |
 | `items`           | -                                                                    | List of collected items for batching.                                                 |
 | `loader`          | -                                                                    | Lambda which should be called to load values loaded in batch.                         |
