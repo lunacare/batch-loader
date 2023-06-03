@@ -69,8 +69,8 @@ class BatchLoader
     @cache ? @loaded_value : result
   end
 
-  def method_missing(method_name, *args, &block)
-    __sync!.public_send(method_name, *args, &block)
+  def method_missing(method_name, *args, **opts, &block)
+    __sync!.public_send(method_name, *args, **opts, &block)
   end
 
   def __sync!
