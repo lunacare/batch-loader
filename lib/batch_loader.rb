@@ -70,6 +70,8 @@ class BatchLoader
   end
 
   def method_missing(method_name, *args, **opts, &block)
+    return unless __sync!.respond_to?(method_name)
+
     __sync!.public_send(method_name, *args, **opts, &block)
   end
 
